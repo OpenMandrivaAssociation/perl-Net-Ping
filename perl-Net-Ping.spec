@@ -1,6 +1,6 @@
 
 %define realname   Net-Ping
-%define version    2.35
+%define version    2.36
 %define release    %mkrel 1
 
 Name:       perl-%{realname}
