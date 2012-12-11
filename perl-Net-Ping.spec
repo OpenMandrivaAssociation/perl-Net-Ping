@@ -1,19 +1,19 @@
 %define upstream_name    Net-Ping
 %define upstream_version 2.36
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 4
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	5
 
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Summary:    TCP, UDP, or ICMP ping
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Summary:	TCP, UDP, or ICMP ping
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Test)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Test)
+BuildArch:	noarch
 
 %description
 This module contains methods to test the reachability of remote hosts on a
@@ -36,23 +36,43 @@ but has higher overhead than the "udp" and "icmp" protocols.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc README Changes
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+%changelog
+* Mon Apr 25 2011 Funda Wang <fwang@mandriva.org> 2.360.0-4mdv2011.0
++ Revision: 658540
+- rebuild for updated spec-helper
+
+* Tue Jul 13 2010 Jérôme Quelin <jquelin@mandriva.org> 2.360.0-3mdv2011.0
++ Revision: 551999
+- rebuild
+
+* Wed Jun 17 2009 Jérôme Quelin <jquelin@mandriva.org> 2.360.0-2mdv2010.0
++ Revision: 386750
+- using %%perl_convert_version
+- fix license
+
+* Tue Jun 09 2009 Guillaume Rousse <guillomovitch@mandriva.org> 2.36-1mdv2010.0
++ Revision: 384245
+- update to new version 2.36
+
+* Mon May 11 2009 Jérôme Quelin <jquelin@mandriva.org> 2.35-1mdv2010.0
++ Revision: 374546
+- import perl-Net-Ping
+
+
+* Mon May 11 2009 cpan2dist 2.35-1mdv
+- initial mdv release, generated with cpan2dist
 
