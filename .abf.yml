@@ -1,2 +1,4 @@
+removed_sources:
+  Net-Ping-2.36.tar.gz: 928c77b9b2f8b8a5ec3c46acb19b35774bf391df
 sources:
-  "Net-Ping-2.36.tar.gz": 928c77b9b2f8b8a5ec3c46acb19b35774bf391df
+  Net-Ping-2.41.tar.gz: f03b8ccedba21daf8a5fe3aab4a59449d73e2db5

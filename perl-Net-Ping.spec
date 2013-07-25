@@ -1,15 +1,15 @@
 %define upstream_name    Net-Ping
-%define upstream_version 2.36
+%define upstream_version 2.41
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%perl_convert_version 2.41
+Release:	1
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Summary:	TCP, UDP, or ICMP ping
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Net/Net-Ping-2.41.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Test)
@@ -75,4 +75,5 @@ make test
 
 * Mon May 11 2009 cpan2dist 2.35-1mdv
 - initial mdv release, generated with cpan2dist
+
 
