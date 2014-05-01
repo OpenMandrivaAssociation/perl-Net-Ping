@@ -1,15 +1,15 @@
-%define upstream_name    Net-Ping
-%define upstream_version 2.41
+%define	modname	Net-Ping
+%define	modver	2.41
 
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	1
+Name:		perl-%{modname}
+Version:	%{perl_convert_version %{modver}}
+Release:	2
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Summary:	TCP, UDP, or ICMP ping
-Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Net/Net-Ping-%{upstream_version}.tar.gz
+Url:		http://search.cpan.org/dist/%{modname}
+Source0:	http://www.cpan.org/modules/by-module/Net/Net-Ping-%{modver}.tar.gz
 
 BuildRequires:  perl(ExtUtils::MakeMaker)
 BuildRequires:  perl(Socket) >= 2.7.0
@@ -35,7 +35,7 @@ is actually echoed. This protocol does not require any special privileges
 but has higher overhead than the "udp" and "icmp" protocols.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{modname}-%{modver}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -51,31 +51,3 @@ make test
 %doc Changes
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
-
-%changelog
-* Mon Apr 25 2011 Funda Wang <fwang@mandriva.org> 2.360.0-4mdv2011.0
-+ Revision: 658540
-- rebuild for updated spec-helper
-
-* Tue Jul 13 2010 Jérôme Quelin <jquelin@mandriva.org> 2.360.0-3mdv2011.0
-+ Revision: 551999
-- rebuild
-
-* Wed Jun 17 2009 Jérôme Quelin <jquelin@mandriva.org> 2.360.0-2mdv2010.0
-+ Revision: 386750
-- using %%perl_convert_version
-- fix license
-
-* Tue Jun 09 2009 Guillaume Rousse <guillomovitch@mandriva.org> 2.36-1mdv2010.0
-+ Revision: 384245
-- update to new version 2.36
-
-* Mon May 11 2009 Jérôme Quelin <jquelin@mandriva.org> 2.35-1mdv2010.0
-+ Revision: 374546
-- import perl-Net-Ping
-
-
-* Mon May 11 2009 cpan2dist 2.35-1mdv
-- initial mdv release, generated with cpan2dist
-
-
