@@ -11,8 +11,10 @@ Summary:	TCP, UDP, or ICMP ping
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Net/Net-Ping-%{upstream_version}.tar.gz
 
-BuildRequires:	perl-devel
-BuildRequires:	perl(Test)
+BuildRequires:  perl(ExtUtils::MakeMaker)
+BuildRequires:  perl(Socket) >= 2.7.0
+BuildRequires:  perl(Test::More)
+BuildRequires:  perl(Time::HiRes)
 BuildArch:	noarch
 
 %description
