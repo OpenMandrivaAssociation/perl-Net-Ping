@@ -11,10 +11,11 @@ Summary:	TCP, UDP, or ICMP ping
 Url:		http://search.cpan.org/dist/%{modname}
 Source0:	http://www.cpan.org/modules/by-module/Net/Net-Ping-%{modver}.tar.gz
 
-BuildRequires:  perl(ExtUtils::MakeMaker)
-BuildRequires:  perl(Socket)
-BuildRequires:  perl(Test::More)
-BuildRequires:  perl(Time::HiRes)
+BuildRequires:	perl(ExtUtils::MakeMaker)
+BuildRequires:	perl(JSON::PP)
+BuildRequires:	perl(Socket)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(Time::HiRes)
 BuildArch:	noarch
 
 %description
