@@ -9,10 +9,10 @@ License:	GPL+ or Artistic
 Group:		Development/Perl
 Summary:	TCP, UDP, or ICMP ping
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/Net/Net-Ping-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Net/%{modname}-%{modver}.tar.gz
 
 BuildRequires:	perl(ExtUtils::MakeMaker)
-BuildRequires:	perl(JSON::PP)
+BuildRequires:	perl(JSON::PP) >=  %{perl_convert_version 2.27103}
 BuildRequires:	perl(Socket)
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Time::HiRes)
