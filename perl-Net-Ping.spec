@@ -14,7 +14,7 @@ Source0:	http://www.cpan.org/modules/by-module/Net/%{modname}-%{modver}.tar.gz
 BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(JSON::PP) >=  %{perl_convert_version 2.27103}
-BuildRequires:	perl(Socket)
+BuildRequires:	perl(Socket) >= %{perl_convert_version 2.007}
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Time::HiRes)
 BuildArch:	noarch
